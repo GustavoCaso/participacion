@@ -87,6 +87,9 @@ Rails.application.routes.draw do
     end
 
     resources :users, only: [:index, :show] do
+      collection do
+        get :search_users
+      end
       member do
         put :restore
         put :confirm_hide

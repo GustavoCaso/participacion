@@ -22,6 +22,7 @@ en:
       moderators: "Moderators"
       stats: "Statistics"
       activity: "Moderator activity"
+      search_users: "Search Users"
     shared:
       user_search:
         placeholder: "Search user by name or email'"

@@ -32,10 +32,17 @@
       <% end %>
     </li>
 
-    <li <%= "class=active" if controller_name == "users" %>>
+    <li <%= "class=active" if controller_name == "users" && action_name != "search_users" %>>
       <%= link_to admin_users_path do %>
         <i class="icon-eye"></i>
         <%= t("admin.menu.hidden_users") %>
+      <% end %>
+    </li>
+
+    <li <%= "class=active" if action_name == "search_users" %>>
+      <%= link_to search_users_admin_users_path do %>
+        <i class="icon-search"></i>
+        <%= t("admin.menu.search_users") %>
       <% end %>
     </li>
 

@@ -179,6 +179,10 @@ class User < ActiveRecord::Base
     term.present? ? where("email = ? OR username ILIKE ?", term, "%#{term}%") : none
   end
 
+  def self.by_dni_or_username_or_email(term)
+    term.present? ? where("document_number = ? OR email = ? OR username ILIKE ?", term, term, "%#{term}%") : none
+  end
+
   def self.username_max_length
     @@username_max_length ||= self.columns.find { |c| c.name == 'username' }.limit || 60
   end

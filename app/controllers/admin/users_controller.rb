@@ -18,6 +18,10 @@ class Admin::UsersController < Admin::BaseController
     redirect_to request.query_parameters.merge(action: :index)
   end
 
+  def search_users
+
+  end
+
   def restore
     @user.restore
     Activity.log(current_user, :restore, @user)
